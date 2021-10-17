@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import nflAPI from "../api/nflAPI";
 import UserContext from "../contexts/UserContext";
 
@@ -33,6 +34,9 @@ class TeamPage extends Component {
             <td>{team.wins}</td>
             <td>{team.losses}</td>
             <td>{team.ties}</td>
+            <td>
+              <Link to={`/teams/${team.id}`}>Update</Link>
+            </td>
           </tr>
         </tbody>
       );

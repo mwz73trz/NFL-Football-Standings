@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import TeamsPage from "./pages/TeamsPage";
+import TeamDataPage from "./pages/TeamDataPage";
 import UserContext from "./contexts/UserContext";
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
                 exact
                 component={TeamsPage}
               />
+              <Route path="/teams/:teamId" exact component={TeamDataPage} />
             </div>
           </UserContext.Provider>
         </Router>

@@ -53,11 +53,20 @@ const getTeamById = async (teamId, token) => {
   return await tryCatchFetch(url, getInit(token));
 };
 
+const updateTeamData = async (teamId, updatedTeam, token) => {
+  let url = `${BASE_URL}api/teams/${teamId}/`;
+  let init = getInit(token);
+  init["method"] = "PUT";
+  init["body"] = JSON.stringify(updatedTeam);
+  return await tryCatchFetch(url, init);
+};
+
 const myExports = {
   doLogin,
   getDivisions,
   getDivisionById,
   getTeamById,
+  updateTeamData,
 };
 
 export default myExports;
