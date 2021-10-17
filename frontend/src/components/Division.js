@@ -1,8 +1,15 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Division extends Component {
   render() {
-    return <span>{this.props.division.name}</span>;
+    return (
+      <span>
+        <Link to={`/divisions/${this.props.division.id}`}>
+          {this.props.division.name}
+        </Link>
+      </span>
+    );
   }
 }
 

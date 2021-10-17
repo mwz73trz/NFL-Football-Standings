@@ -3,6 +3,7 @@ import { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
+import TeamsPage from "./pages/TeamsPage";
 import UserContext from "./contexts/UserContext";
 
 class App extends Component {
@@ -26,6 +27,11 @@ class App extends Component {
             <div>
               <Route path="/" exact component={HomePage} />
               <Route path="/login" exact render={this.renderLoginPage} />
+              <Route
+                path="/divisions/:divisionId"
+                exact
+                component={TeamsPage}
+              />
             </div>
           </UserContext.Provider>
         </Router>

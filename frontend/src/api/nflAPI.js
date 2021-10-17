@@ -43,9 +43,21 @@ const getDivisions = async (token) => {
   return await tryCatchFetch(url, getInit(token));
 };
 
+const getDivisionById = async (divisionId, token) => {
+  let url = `${BASE_URL}api/divisions/${divisionId}/`;
+  return await tryCatchFetch(url, getInit(token));
+};
+
+const getTeamById = async (teamId, token) => {
+  let url = `${BASE_URL}api/teams/${teamId}/`;
+  return await tryCatchFetch(url, getInit(token));
+};
+
 const myExports = {
   doLogin,
   getDivisions,
+  getDivisionById,
+  getTeamById,
 };
 
 export default myExports;
